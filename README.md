@@ -4,6 +4,21 @@
 
 Tools for production operations of Personium server system.
 
+## Components
+
+```
+ads-cell-sweeper       - A batch program to delete the cells that are marked to be deleted.
+backup                 - A batch program for ADS server backup.
+cellRestore            - A tools for cell-level restore from backup data.
+costom-errorpage       - Costomization program of Tomcat's errorpage.
+diff                   - A shell command to check differeces between elasticesearch and ADS(MySQL)
+esgclog                - A batch program print GC log from elasticesearch.
+logback-settings       - A shell command to run logback as a daemon process.
+mx-diskusage           - A shell command to run personium-mx.
+recovery               - Data recovery program from ADS to elasticesearch.
+```
+
+
 ## License
 
 ```
