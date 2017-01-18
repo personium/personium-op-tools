@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.fujitsu.dc</groupId>
-	<artifactId>dc1-recovery</artifactId>
-	<version>1.3.23-SNAPSHOT</version>
+	<groupId>io.personium</groupId>
+	<artifactId>personium-op-recovery</artifactId>
+	<version>1.4.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>dc1-recovery</name>
+	<name>personium-op-recovery</name>
 	<url>http://maven.apache.org</url>
 	<licenses>
 		<license>
@@ -15,7 +15,7 @@
 	</licenses>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.7</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 	<profiles>
 		<profile>
@@ -51,14 +51,14 @@
 	</profiles>
 	<dependencies>
 		<dependency>
-			<groupId>com.fujitsu.dc</groupId>
-			<artifactId>dc1-es-api-${esapi.version}</artifactId>
-			<version>1.3.25</version>
+			<groupId>io.personium</groupId>
+			<artifactId>personium-lib-es-adaptor</artifactId>
+			<version>1.4.2</version>
 		</dependency>
 		<dependency>
-			<groupId>com.fujitsu.dc</groupId>
-			<artifactId>dc1-common</artifactId>
-			<version>1.3.25</version>
+			<groupId>io.personium</groupId>
+			<artifactId>personium-lib-common</artifactId>
+			<version>1.4.2</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
