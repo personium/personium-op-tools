@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.personium</groupId>
 	<artifactId>personium-op-recovery</artifactId>
-	<version>1.4.2-SNAPSHOT</version>
+	<version>1.4.1</version>
 	<packaging>jar</packaging>
 	<name>personium-op-recovery</name>
 	<url>http://maven.apache.org</url>
@@ -24,7 +24,7 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<final.name>dc1-recovery-es0.19</final.name>
+				<final.name>personium-op-recovery-es0.19</final.name>
 				<esapi.version>0_19</esapi.version>
 			</properties>
 		</profile>
@@ -34,7 +34,7 @@
 				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
-				<final.name>dc1-recovery-es1.2</final.name>
+				<final.name>personium-op-recovery-es1.2</final.name>
 				<esapi.version>1_2</esapi.version>
 			</properties>
 		</profile>
@@ -44,7 +44,7 @@
 				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
-				<final.name>dc1-recovery-aws</final.name>
+				<final.name>personium-op-recovery-aws</final.name>
 				<esapi.version>1_2</esapi.version>
 			</properties>
 		</profile>
@@ -53,12 +53,12 @@
 		<dependency>
 			<groupId>io.personium</groupId>
 			<artifactId>personium-lib-es-adaptor</artifactId>
-			<version>1.4.2</version>
+			<version>1.4.1</version>
 		</dependency>
 		<dependency>
 			<groupId>io.personium</groupId>
 			<artifactId>personium-lib-common</artifactId>
-			<version>1.4.2</version>
+			<version>1.4.1</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>

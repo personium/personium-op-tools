@@ -26,7 +26,7 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<final.name>dc1-diff-es0.19</final.name>
+				<final.name>personium-op-diff-es0.19</final.name>
 				<esapi.version>0_19</esapi.version>
 			</properties>
 		</profile>
@@ -36,7 +36,7 @@
 				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
-				<final.name>dc1-diff-es1.2</final.name>
+				<final.name>personium-op-diff-es1.2</final.name>
 				<esapi.version>1_2</esapi.version>
 			</properties>
 		</profile>
@@ -46,7 +46,7 @@
 				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
-				<final.name>dc1-diff-aws</final.name>
+				<final.name>>personium-op-diff-aws</final.name>
 				<esapi.version>1_2</esapi.version>
 			</properties>
 		</profile>
@@ -165,12 +165,12 @@
 		<dependency>
 			<groupId>io.personium</groupId>
 			<artifactId>personium-lib-es-adaptor</artifactId>
-			<version>1.4.2</version>
+			<version>1.4.1</version>
 		</dependency>
 		<dependency>
 			<groupId>io.personium</groupId>
 			<artifactId>personium-lib-common</artifactId>
-			<version>1.4.2</version>
+			<version>1.4.1</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
