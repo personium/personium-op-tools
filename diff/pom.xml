@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.personium</groupId>
 	<artifactId>personium-op-diff</artifactId>
-	<version>1.4.1</version>
+	<version>1.4.2</version>
 	<packaging>jar</packaging>
 	<name>personium-op-diff</name>
 	<url>http://maven.apache.org</url>
@@ -46,7 +46,7 @@
 				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
-				<final.name>>personium-op-diff-aws</final.name>
+				<final.name>personium-op-diff-aws</final.name>
 				<esapi.version>1_2</esapi.version>
 			</properties>
 		</profile>
@@ -85,8 +85,8 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.fujitsu.dc.diff.App</mainClass>
-							<packageName>com.fujitsu.dc.diff</packageName>
+							<mainClass>io.personium.diff.App</mainClass>
+							<packageName>io.personium.diff</packageName>
 							<addClasspath>true</addClasspath>
 							<addExtensions>true</addExtensions>
 							<classpathPrefix>lib</classpathPrefix>
@@ -103,7 +103,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>com.fujitsu.dc.diff.App</mainClass>
+							<mainClass>io.personium.diff.App</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -119,6 +119,19 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>2.12</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>report-only</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
 				<version>1.2.1</version>
 				<executions>
@@ -131,7 +144,7 @@
 							<finalName>${final.name}</finalName>
 							<transformers>
 								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>com.fujitsu.dc.diff.App</mainClass>
+									<mainClass>io.personium.diff.App</mainClass>
 								</transformer>
 							</transformers>
 						</configuration>
@@ -149,7 +162,7 @@
 						<exclude>checkstyle.header</exclude>
 						<exclude>checkstyle_maven.properties</exclude>
 						<exclude>checkstyle-suppressions.xml</exclude>
-						<exclude>dc-checks.xml</exclude>
+						<exclude>personium-checkstyle.xml</exclude>
 						<exclude>findbugs-exclude.xml</exclude>
 						<exclude>logback.xml</exclude>
 						<exclude>pom.xml</exclude>
@@ -164,13 +177,13 @@
 	<dependencies>
 		<dependency>
 			<groupId>io.personium</groupId>
-			<artifactId>personium-lib-es-adaptor</artifactId>
-			<version>1.4.1</version>
+			<artifactId>personium-lib-es-adapter</artifactId>
+			<version>1.4.2</version>
 		</dependency>
 		<dependency>
 			<groupId>io.personium</groupId>
 			<artifactId>personium-lib-common</artifactId>
-			<version>1.4.1</version>
+			<version>1.4.2</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -231,7 +244,7 @@
 		</repository>
 		<repository>
 			<id>personum.io</id>
-			<name>personium.io</name>
+			<name>Personium Repository</name>
 			<url>http://personium.io/mvnrepo/</url>
 		</repository>
 		<repository>
