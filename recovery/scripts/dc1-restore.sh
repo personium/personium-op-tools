@@ -32,8 +32,8 @@
 JAVA_HOME=/opt/jdk
 PATH=${JAVA_HOME}/bin:${PATH}
 ES_PORT=9200
-SCRIPT_LOG=/fj/dc-recovery/log/dc-recovery.log.`/bin/date +%Y%m%d`
-/bin/mkdir -p /fj/dc-recovery/log
+SCRIPT_LOG=/fj/personium-recovery/log/personium-recovery.log.`/bin/date +%Y%m%d`
+/bin/mkdir -p /fj/personium-recovery/log
 
 ## INFO log output.
 ## arguments:
@@ -75,7 +75,7 @@ function read_property() {
 ##   $1: properties file path
 ##
 function read_properties() {
-  local value=`read_property com.fujitsu.dc.core.es.hosts ${1}`
+  local value=`read_property io.personium.core.es.hosts ${1}`
   if [[ "${value}" =~ "," ]]; then
     ES_HOST=`echo ${value} | tr ',|:' ' ' | awk '{print $1}'`
   else
@@ -145,7 +145,7 @@ fi
 
 # Retrive number of replicas from Elasticsearch.
 #
-REPLICAS_OF_INDICES=`python /fj/dc-recovery/retrieveNumberOfReplica.py ${ES_HOST} ${ES_PORT} ${ES_VERSION} 2> ${SCRIPT_LOG}`
+REPLICAS_OF_INDICES=`python /fj/personium-recovery/retrieveNumberOfReplica.py ${ES_HOST} ${ES_PORT} ${ES_VERSION} 2> ${SCRIPT_LOG}`
 if [ $? -ne 0 ]; then
   log_error "Failed to retrieve number_of_replica from Elasticsearch (host=${ES_HOST}, detail=${REPLICAS_OF_INDICES})."
   exit
@@ -193,7 +193,7 @@ i_opt=
 if [ -n "${RESTORE_INDEX}" ]; then
   i_opt="-i ${RESTORE_INDEX}"
 fi
-java -Xmx1024m -jar /fj/dc-recovery/dc1-recovery.jar -p ${PROPERTIES_FILE_PATH} ${IS_CLEAR} -i ${RESTORE_INDEX} -r ${NUMBER_OF_REPLICAS} | tee -a ${SCRIPT_LOG}
+java -Xmx1024m -jar /fj/personium-recovery/personium1-recovery.jar -p ${PROPERTIES_FILE_PATH} ${IS_CLEAR} -i ${RESTORE_INDEX} -r ${NUMBER_OF_REPLICAS} | tee -a ${SCRIPT_LOG}
 if [ ${PIPESTATUS[0]} -ne 0 ]; then
   log_info "Elasticsearch restore is failed."
   exit 1
